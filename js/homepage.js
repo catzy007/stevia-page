@@ -32,7 +32,7 @@ function getHomepageIndexArray(){
 }
 
 function getHomepageCategoryArray(){
-    var category = "## Category\n";
+    var category = "";
     var text = this.responseText;
 	var arrPure = getArrPure(text);
 	var arrCategory = getArrFilter(text);

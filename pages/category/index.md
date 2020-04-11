@@ -1,5 +1,3 @@
-Lain-Lain
-Tutorial
-Worksop
-Lomba
-Kegiatan
+Technology
+Healthcare
+Lifestyle

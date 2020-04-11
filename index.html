@@ -26,6 +26,13 @@
 			location.reload();
 			window.scrollTo(0, 0); 
 		}
+		jQuery( document ).ready(function( $ ) {
+			//Use this inside your document ready jQuery 
+			$(window).on('popstate', function() {
+				location.reload(true);
+				window.scrollTo(0, 0);
+			});
+		});
 	</script>
 	<!-- MARKDOWN PARSER AND CORE -->
 	<script src="./js/bloginfo.js"></script>
@@ -61,17 +68,18 @@
 			<div id="featured-post"></div>
 			<div class="col-sm-4">
 				<div id="search" class="row search-container search-cat">
-						<input type="text" placeholder="Search..">
-						<button type="submit"><i class="fa fa-search"></i></button>
+					<input type="text" placeholder="Search..">
+					<button type="submit"><i class="fa fa-search"></i></button>
 				</div>
-				<div id="category" class="row search-cat">
-					<h2>Category</h2>
+				<div class="row search-cat">
+					<h3 class="text-page-color">Category</h3><br>
+					<div id="category"></div>
 				</div>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-sm-12">
-				<h2>Latest Post</h2>
+				<h3 class="text-page-color">Latest Post</h3>
 				<div id="latest-post">
 					<h3 class="text-center">
 					Loading Webpages. If nothing happen in 
@@ -83,7 +91,7 @@
 		</div>
 		<div class="row">
 			<div class="col-sm-12">
-				<h2>Kegiatan</h2>
+				<h3 class="text-page-color">Technology</h3>
 				<div id="category-post">
 					<h3 class="text-center">
 					Loading Webpages. If nothing happen in 
@@ -96,7 +104,7 @@
 		<div class="row">
 			<div class="col-sm-12 text-center">
 				<br>
-				<h3>2017 - <script>document.write(new Date().getFullYear())</script> Maulana Bagus Saputra</h3>
+				<h3><script>document.write(new Date().getFullYear()); document.write(" " + getBlogCopyright());</script></h3>
 				<h4>Made with <a style="color:red">&#9829;</a> using Stevia Page</h4>
 			</div>
 		</div>

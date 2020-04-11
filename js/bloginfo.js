@@ -3,8 +3,9 @@ var bgIdnt;
 var bgUrl;
 var bgTitle;
 var bgLang;
-var tOp = "UMBRELLA";
+var tOp = "Stevia Page";
 var disqus = "umbrella-test";
+var copyright = "Bagus Saputra"
 
 function setBlogIdentifier(pIdnt, pUrl, pTitle, pLang){
 	bgIdnt = pIdnt;
@@ -23,4 +24,8 @@ function getDisqusShortname(){
 
 function enableComments(){
 	return false;
+}
+
+function getBlogCopyright(){
+	return copyright;
 }

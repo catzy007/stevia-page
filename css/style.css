@@ -1,12 +1,7 @@
 /* BASIC CSS */
 	body {
-		background-color: #55688A;
+		background-color: #618287;
 		font-family: 'Barlow', sans-serif;
-	}
-	hr {
-		margin: 0;
-		border-width: 3px;
-		border-color: #DB2C30;
 	}
 	.center-block {
 		display: block;
@@ -19,9 +14,12 @@
 	}
 	.text-pages {
 		cursor: pointer;
-		color:#55688A;
+		color:#618287;
 		text-shadow: 0px 1px #ddd;
 		font-size: x-large;
+	}
+	.text-page-color {
+		color:#618287;
 	}
 	.text-pages-seperator {
 		color:rgba(253, 253, 253, 0.95);
