@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>UMBRELLA</title>
+	<!-- Bootstrap 3 -->
+	<link rel="stylesheet" href="./css/bootstrap.min.css"/>
+	<script src="./js/jquery.min.js"></script>
+	<script src="./js/bootstrap.min.js"></script>
+	<!-- Markdown Parser -->
+	<script src="./js/showdown.min.js"></script>
+	<!-- My CSS -->
+	<link rel="stylesheet" href="css/style.css"/>
+	<!-- Google Font -->
+	<link href="https://fonts.googleapis.com/css?family=Barlow" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Josefin+Slab:100&display=swap" rel="stylesheet">
+	<!-- icon -->
+	<link rel="icon" href='./assets/spinner.gif' type="image/x-icon"/>
+	<!-- Refresher Script -->
+	<script>
+		function refreshed(){
+			location.reload();
+			window.scrollTo(0, 0); 
+		}
+		jQuery( document ).ready(function( $ ) {
+			//Use this inside your document ready jQuery 
+			$(window).on('popstate', function() {
+				location.reload(true);
+				window.scrollTo(0, 0);
+			});
+		});
+	</script>
+	<!-- MARKDOWN PARSER AND CORE -->
+	<script src="./js/bloginfo.js"></script>
+	<script src="./js/fetcher.js"></script>
+	<script src="./js/mdparser.js"></script>
+	<script src="./js/pages.js"></script>
+	<script src="./js/posts.js"></script>
+	<script src="./js/category.js"></script>
+	<script src="./js/subcategory.js"></script>
+	<script src="./js/index.js"></script>
+	<script src="./js/titleparser.js"></script>
+	<script src="./js/indexfilter.js"></script>
+	<script>
+		window.onload = function mainLoader(){
+			executeXhr("./pages/index.md", getPagesArray, "PAGE-INDEX");
+		}
+	</script>
+</head>
+<body>
+	<div class="container mycontainer">
+		<div class="row">
+			<div class="col-sm-12 text-right">
+				<div id="Pages"></div>
+			</div>
+		</div>
+		<!-- <div class="row">
+			<img class="img-responsive" src="assets/img1.jpg" alt="img1">
+		</div> -->
+		<div class="row">
+			<div id="Posts" class="col-sm-12 myexpander">
+				<h3 class="text-center">
+				Loading Webpages. If nothing happen in 
+				few second, Consider updating your browser 
+				or change your browser to Google Chrome or Mozilla Firefox
+				</h3>
+			</div>
+			<div id="Comments" class="col-sm-12">
+				<div id="disqus_thread"></div>
+			</div>
+		</div>
+		<div class="row">
+			<br>
+			<div id="BtnPrev" class="col-sm-6 text-left"></div>
+			<div id="BtnNext" class="col-sm-6 text-right"></div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12 text-center">
+				<br>
+				<h4>2017 - <script>document.write(new Date().getFullYear())</script> Maulana Bagus Saputra</h4>
+			</div>
+		</div>
+	</div>
+	<script>
+		/* * * Disqus Reset Function * * */
+		var reset = function (newIdentifier, newUrl, newTitle, newLanguage) {
+				DISQUS.reset({
+						reload: true,
+						config: function () {
+								this.page.identifier = newIdentifier;
+								this.page.url = newUrl;
+								this.page.title = newTitle;
+								this.language = newLanguage;
+						}
+				});
+		};
+	
+		var isLoaded = false;
+		var disqus_config = function () {
+			console.log("#![DISQUS] " + isLoaded);
+			this.callbacks.onReady = [function(data) {
+				if(isLoaded == false){
+					isLoaded = true;
+					//console.log(getBlogIdentifier());
+					console.log("#![DISQUS] " + isLoaded);
+					reset(getBlogIdentifier()[0], getBlogIdentifier()[1], getBlogIdentifier()[2], getBlogIdentifier()[3]);
+				}
+			}];
+		}
+	</script>
+</body>
+</html>
