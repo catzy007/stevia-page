@@ -12,10 +12,11 @@ function getHomepageIndexArray(){
         // }
         index+=  "<div class=\"col-sm-3\">"+
                     "<div class=\"card\"" +
-                    "onclick=\"location.href='./loader.html#!" +
-                    arrindex[i] +"'\">" +
-                        "<div class=\"card-image\">" +
-                            "<img src=\"https://blog.doscom.org/posts/2018-05-12-release-party-tealinuxos-x/5.jpg\">" +
+                    "onclick=\"location.href='./loader.html#!" + arrindex[i] +"'\">" +
+                        "<div class=\"card-image\" "+
+                        "style=\"background-image: url('" +
+                            "./assets/img"+(i+1)+".jpg" +
+                        "');\">" +
                         "</div>" +
                         "<div class=\"card-content\">" +
                             "<p class=\"card-title\">" +
@@ -61,8 +62,9 @@ function setHomepageMenu(){
 		if(arrPages[i] == "home"){
 			pages+= "<a class=\"text-pages\" onclick=\"location.href='./'\">Home</a>";
 		}else{
-			pages+= "<a class=\"text-pages\" onclick=\"location.href='./loader.html#!" + arrPages[i] + 
-					"'\">" + arrPure[i].split('-').join(' ') +"</a>";
+            pages+= "<a class=\"text-pages\" " +
+                    "onclick=\"location.href='./loader.html#!" + arrPages[i] + "'\">" 
+                    + arrPure[i].split('-').join(' ') +"</a>";
 		}
 		//console.log(i + " " + arrPages[i] + " " + arrPure[i]);
 	}
@@ -75,4 +77,24 @@ function showHomepageMarkdown(type, postInfo, target){
     var converter = new showdown.Converter();
     var html = converter.makeHtml(markdown);
     document.getElementById(target).innerHTML = html;
+}
+
+function setHomepageFeaturedPost(){
+    var pages = "";
+    var text = this.responseText;
+	var arrPure = getArrPure(text);
+	var arrPost = getArrFilter(text);
+    pages += "<div id=\"featured-post-container\" " +
+            "onclick=\"location.href='./loader.html#!" + arrPost[0] + "'\"" +
+            "style=\"background-image: url('" +
+            "./assets/img1.jpg" +
+            "');\" class=\"col-sm-8 featured-post\">" +
+                "<div class=\"featured-post-title\"><h3>" +
+                    getSlicedTitle(getCleanedTitle(arrPure[0])) +
+                "</h3></div>" +
+                "<div class=\"featured-post-info\"><p>" +
+                    getTitleDate(arrPost[0]) +
+                "</p></div>" +
+            "</div>";
+    document.getElementById('featured-post').innerHTML = pages;
 }
