@@ -23,7 +23,7 @@ function getDisqusShortname(){
 }
 
 function enableComments(){
-	return false;
+	return true;
 }
 
 function getBlogCopyright(){

@@ -6,16 +6,15 @@ function getHomepageIndexArray(){
     var arrindex = getArrFilter(text);
     (arrPure.length>8) ? (limit=8) : (limit=arrPure.length);
     for(var i=0; i<limit; i++){
-        // if(arrPure[i].length == "1" && arrPure[i] == "-"){
-        //     arrPure.splice(i,1);
-        //     index+= "<br>";
-        // }
+        if(arrPure[i].length == "1" && arrPure[i] == "-"){
+            arrPure.splice(i,1);
+        }
         index+=  "<div class=\"col-sm-3\">"+
                     "<div class=\"card\"" +
                     "onclick=\"location.href='./loader.html#!" + arrindex[i] +"'\">" +
                         "<div class=\"card-image\" "+
                         "style=\"background-image: url('" +
-                            "./assets/img"+(i+1)+".jpg" +
+                            "./assets/img-latest/img"+(i+1)+".jpg" +
                         "');\">" +
                         "</div>" +
                         "<div class=\"card-content\">" +
@@ -27,6 +26,42 @@ function getHomepageIndexArray(){
                 "</div>\n";
         //console.log(i + " " + arrindex[i] + " " + arrPure[i]);
     }
+    index+= "<div style=\"padding-top:2em\" class=\"col-sm-12 text-center\">" +
+            "<a style=\"font-size:medium;\" href=\"./loader.html#!index\">Show More Like this \></a></div>";
+    document.getElementById(this.arguments[1]).innerHTML = index;
+    //showHomepageMarkdown("PAGE", ["#!", "#!", index], this.arguments[1]);
+}
+
+function getHomepageCustomArray(){
+    var limit = 8;
+    var index="";
+    var text = this.responseText;
+	var arrPure = getArrPure(text);
+    var arrindex = getArrFilter(text);
+    (arrPure.length>8) ? (limit=8) : (limit=arrPure.length);
+    for(var i=0; i<limit; i++){
+        if(arrPure[i].length == "1" && arrPure[i] == "-"){
+            arrPure.splice(i,1);
+        }
+        index+=  "<div class=\"col-sm-3\">"+
+                    "<div class=\"card\"" +
+                    "onclick=\"location.href='./loader.html#!" + arrindex[i] +"'\">" +
+                        "<div class=\"card-image\" "+
+                        "style=\"background-image: url('" +
+                            "./assets/img-category/img"+(i+1)+".jpg" +
+                        "');\">" +
+                        "</div>" +
+                        "<div class=\"card-content\">" +
+                            "<p class=\"card-title\">" +
+                            getSlicedTitle(getCleanedTitle(arrPure[i])) +
+                            "</p>" +
+                        "</div>" +
+                    "</div>" +
+                "</div>\n";
+        //console.log(i + " " + arrindex[i] + " " + arrPure[i]);
+    }
+    index+= "<div style=\"padding-top:2em\" class=\"col-sm-12 text-center\">" +
+            "<a style=\"font-size:medium;\" href=\"./loader.html#!subcategory-technology\">Show More Like this \></a></div>";
     document.getElementById(this.arguments[1]).innerHTML = index;
     //showHomepageMarkdown("PAGE", ["#!", "#!", index], this.arguments[1]);
 }
@@ -39,7 +74,6 @@ function getHomepageCategoryArray(){
     for(var i=0; i<arrCategory.length; i++){
         if(arrPure[i].length == "1" && arrPure[i] == "-"){
             arrPure.splice(i,1);
-            category+= "<br>\n";
         }
         category+= "<p class=\"text-index-subcategory\"" +
                     "onclick=\"location.href='./loader.html#!subcategory-" + 
@@ -87,7 +121,7 @@ function setHomepageFeaturedPost(){
     pages += "<div id=\"featured-post-container\" " +
             "onclick=\"location.href='./loader.html#!" + arrPost[0] + "'\"" +
             "style=\"background-image: url('" +
-            "./assets/img1.jpg" +
+            "./assets/featured.jpg" +
             "');\" class=\"col-sm-8 featured-post\">" +
                 "<div class=\"featured-post-title\"><h3>" +
                     getSlicedTitle(getCleanedTitle(arrPure[0])) +
