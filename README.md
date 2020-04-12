@@ -4,6 +4,25 @@
 
 This blog framework made by fusing [markdown parser](https://github.com/showdownjs/showdown), [Vanilla.js](http://vanilla-js.com/) and [XMLHttpRequest API (XHR)](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest).
 
+### Directory structure
+```
+.
+├── assets
+│   ├── img-category
+│   └── img-latest
+├── css
+├── js
+├── pages
+│   ├── your-custom-page
+│   │   └── index.md (put your page content here)
+│   ├── category
+|   └── index.md (page index)
+└── posts
+    ├── YYYY-MM-DD-post-title-you-want-to-create
+    │   └── index.md (put your post content here)
+    └── index.md (post index)
+```
+
 ### To make new posts, do (for github users)
 1. Clone this git.
 2. Go to `posts` and make new directory with format.
