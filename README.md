@@ -45,3 +45,6 @@ YYYY-MM-DD-post-title-you-want-to-create
 
 ### Cons
 * Spacing and layouting still broken sometimes but can be avoided using HTML.
+
+### Todo
+* Add search functionality
