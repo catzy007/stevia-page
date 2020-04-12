@@ -25,10 +25,9 @@ This blog framework made by fusing [markdown parser](https://github.com/showdown
 
 ### To make new posts, do (for github users)
 1. Clone this git.
-2. Go to `posts` and make new directory with format.
+2. Go to `posts` and make new directory with format (lowercase).
 ```
 YYYY-MM-DD-post-title-you-want-to-create
-(LOWERCASE)
 ```
 3. Go to directory you just made and create `index.md`.
 4. Fill `index.md` with your content using markdown &/ html format.
