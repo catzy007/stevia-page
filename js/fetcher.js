@@ -10,6 +10,7 @@ function xhrSuccess() {
 }
 
 function xhrError(type, status) { 
+	console.log(type + " " + this.arguments);
 	setBlogIdentifier("/blog/#!", window.location.href, (this.statusText || status), "en");
 	var mylog = "#![" + (this.arguments || type) + "] XMLHttpRequest Error! " + (this.statusText || status);
 	console.log(mylog);
@@ -17,7 +18,7 @@ function xhrError(type, status) {
 		<div align=\"center\">\
 			<h1 class=\"not-found-nmbr\">404</h1>\n\
 			<h1>"+ (this.arguments || type) +" Not Found!</h1>\n\
-			<h3>Sorry the main "+ (this.arguments || type) +" for this website could not be found.</h3>\
+			<h3>Sorry the "+ (this.arguments || type) +" you're looking could not be found.</h3>\
 			<h4>["+ (this.arguments || type) +"] XMLHttpRequest Error!</h4>\
 		</div>";
 	showMarkdown((this.arguments || type), ["#!", "#!", pagelog]);

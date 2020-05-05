@@ -27,7 +27,7 @@ function getPostsArray(){
     //if requested url not found in pages and posts
         if(i == arrPosts.length){
             setBlogIdentifier("/blog/#!", window.location.href, "POST Not Found!", "en");
-            xhrError("POST","Not Found");
+            xhrError("PAGE","Not Found");
         }
 //if no specific post requested = show homepage/first post in index
     }else{

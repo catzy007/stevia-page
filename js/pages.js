@@ -12,7 +12,12 @@ function getPagesArray(){
 	for(var i=0; i<arrPages.length; i++){
 	//requested page
 		setBlogIdentifier("", "", arrPure[i], "");
-		if(hash == arrPages[i] && hash == "index"){
+		if(hash.includes("search-")){
+		//show search page
+			var sKeyword = hash.replace("search-",'');
+			executeXhr("./posts/index.md", getSearchRequest, "POST-INDEX", "", sKeyword);
+			break;
+		}else if(hash == arrPages[i] && hash == "index"){
 		//show post index page
 			executeXhr("./posts/index.md", getIndexArray, "POST-INDEX");
 			break;
