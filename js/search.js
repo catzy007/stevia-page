@@ -1,10 +1,11 @@
 function getSearchRequest(){
     var index="## Search Result\n";
-    var sKeyword = this.arguments[2].toLowerCase();
+    var sKeyword = this.arguments[2].toLowerCase().split('-').join(' ');
     var text = this.responseText;
 	var arrPure = getArrPure(text);
     var arrindex = getArrFilter(text);
     var sResult = "";
+    // console.log(sKeyword);
     for(var i=0; i<arrindex.length; i++){
         if(getParsedTitle(arrPure[i]).toLowerCase().includes(sKeyword)){
             sResult+= "<a class=\"text-index-subcategory\"" +
@@ -17,8 +18,14 @@ function getSearchRequest(){
     if(!sResult){
         sResult = "<p>No Posts Found!</p><p>Make sure you type the right keyword and try again.</p>"
     }
-    console.log(getFilteredKeyword("a!@da s4#$ ^sgds&*( 7`HDGA/\ jdsahd a&n bsp"));
     showMarkdown("PAGE", ["#!", "#!", index+sResult]);
+}
+
+function startSearch(){
+    var keyword = getFilteredKeyword(document.getElementById("iptSearch").value);
+    if(keyword){
+        location.href = "./loader.html#!search-" + keyword;
+    }
 }
 
 function getFilteredKeyword(input){
