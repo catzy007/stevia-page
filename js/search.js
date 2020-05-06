@@ -10,13 +10,16 @@ function getSearchRequest(){
     var sResult = "";
     // console.log(sKeyword);
     for(var i=0; i<arrindex.length; i++){
+        if(arrPure[i].length == "1" && arrPure[i] == "-"){
+            arrPure.splice(i,1);
+        }
         if(getParsedTitle(arrPure[i]).toLowerCase().includes(sKeyword)){
             sResult+= "<a class=\"text-index-subcategory\"" +
                     "onclick=\"location.href='#!" + 
                     arrindex[i] +"';refreshed()\">" + 
                     getParsedTitle(arrPure[i]) + "</a>\n<br>";
+            // console.log(i + " " + arrindex[i] + " " + arrPure[i]);
         }
-        //console.log(i + " " + arrindex[i] + " " + arrPure[i]);
     }
     if(!sResult){
         sResult = "<p>No Posts Found!</p><p>Make sure you type the right keyword and try again.</p>"
