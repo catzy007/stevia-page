@@ -1,6 +1,9 @@
 function getSearchRequest(){
-    var index="## Search Result\n";
-    var sKeyword = this.arguments[2].toLowerCase().split('-').join(' ');
+    var index="## Search\n" 
+    index += "<input id=\"iptSearch\" type=\"text\" style=\"width:79%;\" placeholder=\"Type Keyword..\">\n";
+    index += "<button type=\"submit\" style=\"width:20%\" onclick=\"startSearch();\">Search</button>\n";
+    index += "### Search Result\n";
+    var sKeyword = this.arguments[2].toLowerCase().split('-').join(' ').replace(/[^\w\s]/gi, '');
     var text = this.responseText;
 	var arrPure = getArrPure(text);
     var arrindex = getArrFilter(text);
