@@ -1,4 +1,4 @@
 About
-Category
+Contact
 Index
 Home

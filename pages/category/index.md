@@ -1,3 +1,4 @@
-Technology
-Healthcare
-Lifestyle
+Networking
+Programming
+TipsTricksBasics
+Miscellaneous

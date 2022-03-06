@@ -1,14 +1,13 @@
-# It's custom page
-let's try to make your own custom page
+#### About Page
 
+Put basic information about your website here. You can write who are you, what this site does, 
+privacy policy, acknowledgement and some legal stuff if necessary.
 
+Stevia page is website (blog) template written by Bagus Saputra in his spare time. Stevia name 
+is derived from Stevia leaf which has sweet taste. Stevia page meant to be sweet and easy way to 
+have website with infinite customizability for one who need it while maintaining ease of use 
+for everyone else. 
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus posuere nunc a facilisis tincidunt. Cras nunc dui, sollicitudin et eleifend non, efficitur sit amet justo. Nullam elit sapien, dignissim at eleifend in, rutrum vel leo. Nullam varius eros vel odio vulputate ullamcorper. Aenean nec leo sem. Fusce porta enim quis lorem euismod maximus. Aenean iaculis maximus egestas. Curabitur quis lorem est. Vestibulum turpis dolor, pretium quis pharetra a, pretium in tellus. Nam turpis tellus, venenatis ut commodo luctus, eleifend non magna. Integer orci leo, congue at mattis non, sollicitudin ac odio.
-
-Nunc ornare massa enim. Phasellus vel metus purus. Fusce faucibus justo vitae fermentum auctor. Sed tristique mi purus, quis iaculis tortor ultricies id. Mauris finibus neque et purus tincidunt efficitur. Aenean felis eros, ullamcorper nec convallis nec, vulputate ut turpis. Donec aliquam leo vitae mi dapibus consectetur. Nullam at dolor lacus. Nam egestas metus quis sem dapibus, nec ullamcorper tortor accumsan. Morbi finibus felis sit amet ultricies luctus. Quisque ornare, magna et cursus accumsan, quam turpis mollis tortor, quis elementum lacus leo eget neque. Fusce blandit sodales magna, eget aliquam nibh viverra eu.
-
-Ut lacus risus, dictum eu sem a, commodo condimentum nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam nunc elit, hendrerit id pretium dignissim, facilisis sed nisi. Phasellus ac urna neque. Proin ac ultricies nisi. Fusce commodo massa id tellus porttitor, nec molestie dui sollicitudin. Donec commodo suscipit augue, a vulputate nulla. Sed tempor id dui et interdum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Ut accumsan faucibus mi, id hendrerit eros ornare sed. Pellentesque dignissim arcu neque, quis posuere ligula congue et.
-
-Cras lorem ligula, posuere vitae quam eu, placerat suscipit mi. Duis volutpat a orci in eleifend. Aenean eros ex, mattis nec laoreet in, porttitor eget tortor. Suspendisse semper sapien dolor, eget rutrum nisi bibendum semper. Vestibulum convallis consectetur tortor sit amet tincidunt. Etiam eget vestibulum neque. Praesent fermentum consectetur sapien, vel suscipit ligula sagittis id. Curabitur sit amet augue quis tellus sagittis ultrices.
-
-Nunc sollicitudin massa eget ipsum rutrum dapibus. In hac habitasse platea dictumst. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris dignissim facilisis felis nec malesuada. Etiam dignissim felis eget massa euismod, ac vehicula nulla congue. Nunc hendrerit eget arcu ac efficitur. Curabitur et semper felis. Praesent eu pharetra neque, ac tempor neque. Donec sagittis consectetur odio, nec congue nulla euismod vel. Cras non viverra ligula, vitae accumsan mi. 
+Stevia page uses static page encoded in [markdown](https://www.markdownguide.org/basic-syntax/) 
+instead of traditional database. Which mean that there are things to follow like directory structure, 
+content and title formatting or customize yourself. Source code is open to use, distribute and modify.
