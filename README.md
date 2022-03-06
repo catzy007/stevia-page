@@ -33,7 +33,7 @@ At the heart it uses [ShowdownJS](https://github.com/showdownjs/showdown),
     └── index.md (post index)
 ```
 
-### To make new posts, do (for GitHub users)
+### To make new posts, do (for Git users)
 1. Clone this git.
 2. Go to `posts` and make new directory with format (lowercase).
 ```
@@ -51,7 +51,7 @@ YYYY-MM-DD-post-title-you-want-to-create
 ### Pros
 * You can write in any platform as long as you have git and text editor.
 * No need to install additional tools like [Hugo](https://gohugo.io/) & [Jekyll](https://jekyllrb.com/).
-* No need to regenerate static page after update content.
+* No need to regenerate static page after content update.
 
 ### Cons
 * Spacing and layouting still not perfect sometimes but can be avoided using HTML.
