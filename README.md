@@ -18,15 +18,15 @@ At its heart it uses [ShowdownJS](https://github.com/showdownjs/showdown),
 ├── scss
 ├── pages
 │   ├── your-custom-page
-│   │   └── index.md (put your page content here)
+│   │   └── content.md (put your page content here)
 │   ├── about
-|   │   └── index.md (about page content)
+|   │   └── content.md (about page content)
 |   ├── contact
-|   │   └── index.md (contact page content)
+|   │   └── content.md (contact page content)
 |   └── index.md (page index)
 └── posts
     ├── YYYY-MM-DD-post-title-you-want-to-create
-    │   ├── index.md (put your post content here)
+    │   ├── content.md (put your post content here)
     │   ├── picture.jpg (post image)
     │   ├── thumbnail.jpg (post thumbnail)
     │   └── document.doc (downloadable document)
@@ -39,10 +39,10 @@ At its heart it uses [ShowdownJS](https://github.com/showdownjs/showdown),
 ```
 YYYY-MM-DD-post-title-you-want-to-create
 ```
-3. Go to directory you just made and create `index.md`.
-4. Fill `index.md` with your content using markdown &/ html format.
+3. Go to directory you just made and create `content.md`.
+4. Fill `content.md` with your content using markdown &/ html format.
 5. Create `thumbnail.jpg` file with `800 x 600` resolution.
-6. Then open `/posts/index.md` and add directory name `(YYYY-MM-DD-post-title-you-want-to-create)` to posts index.
+6. Then open `/posts/index.md` and add directory name `YYYY-MM-DD-post-title-you-want-to-create` to posts index.
 7. Git add, commit, and push.
 8. If you set CI/CD, your blog will automatically updated.
 
