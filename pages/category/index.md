@@ -1,4 +1,4 @@
-Networking
-Programming
-TipsTricksBasics
-Miscellaneous
+Basics
+Activity
+Arts
+Tutorials

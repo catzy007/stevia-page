@@ -51,4 +51,4 @@ YYYY-MM-DD-post-title-you-want-to-create
 * No need to regenerate static page after update content.
 
 ### Cons
-* Spacing and layouting still broken sometimes but can be avoided using HTML.
+* Spacing and layouting still not perfect sometimes but can be avoided using HTML.
