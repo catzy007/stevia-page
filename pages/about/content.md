@@ -11,3 +11,11 @@ for everyone else.
 Stevia page uses static page encoded in [markdown](https://www.markdownguide.org/basic-syntax/) 
 instead of traditional database. Which mean that there are things to follow like directory structure, 
 content and title formatting or customize yourself. Source code is open to use, distribute and modify.
+
+Like Stevia page? Give me a coffee or 10
+
+<https://ko-fi.com/catzy007>
+
+<https://paypal.me/catzy007?country.x=ID&locale.x=en_US>
+
+3MaeSaxxfj3r5rZkE53KgPXbqhz13rQC59 BTC (Nicehash)
