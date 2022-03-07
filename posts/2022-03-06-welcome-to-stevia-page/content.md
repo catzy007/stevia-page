@@ -18,3 +18,45 @@ Mac, etc. As long as you have web server installed like
 [Apache HTTP](https://httpd.apache.org/download.cgi), 
 [Nginx](https://docs.nginx.com/nginx/admin-guide/web-server/web-server/), 
 [IIS](https://www.iis.net/), you're ready to go.
+
+#### Quick-start guide
+This guide will show you how to set up and deploy Stevia page using 
+[GitHub Pages](https://pages.github.com/).
+1. First, you need GitHub Account. If you have already it's awesome, if you don't 
+then you can [Sign Up](https://github.com/signup) first.
+1. After obtaining proper working GitHub account and Signing In, go to Stevia page 
+repository <https://github.com/catzy007/stevia-page>.
+1. Click button called `Use this template`.
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">
+            <div class="thumbnail">
+                <img class="img-responsive" src="./posts/2022-03-06-welcome-to-stevia-page/01.png" alt="img">
+            </div>
+        </div>
+        <div class="col-sm-2"></div>
+    </div>
+
+1. Fill `Repository name` to your `username.github.io`, set repository as `Public` and `Create repository from template`.
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">
+            <div class="thumbnail">
+                <img class="img-responsive" src="./posts/2022-03-06-welcome-to-stevia-page/02.png" alt="img">
+            </div>
+        </div>
+        <div class="col-sm-2"></div>
+    </div>
+
+1. Wait for page build and deploy process to complete. Your repository should have Green checkmark <span style="color:green">&#10004;</span>.
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">
+            <div class="thumbnail">
+                <img class="img-responsive" src="./posts/2022-03-06-welcome-to-stevia-page/03.png" alt="img">
+            </div>
+        </div>
+        <div class="col-sm-2"></div>
+    </div>
+
+1. Go to your site `username.github.io` and you should have exact copy of Stevia page.
