@@ -1,5 +1,5 @@
 #### Welcome to Stevia Page
-*Sunday, March 6 2022*
+*Sunday, March 6, 2022*
 
 Hi! and welcome to Stevia page. Stevia page is website (blog) template written 
 by Bagus Saputra in his spare time. Stevia page primarily written in 
