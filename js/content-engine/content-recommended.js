@@ -28,7 +28,8 @@ function loadContentRecommended(arrIndex, arrLower){
 
     for(var i=0; i<contLoadMax; i++){
         document.getElementById(contPostCardId[i]).href = "./loader.html?post=" + recommendedContentL[i];
-        document.getElementById(contPostImgId[i]).src = checkImgExist("./posts/" + recommendedContentL[i] + "/thumbnail.jpg");
+        // document.getElementById(contPostImgId[i]).src = checkImgExist("./posts/" + recommendedContentL[i] + "/thumbnail.jpg");
+        setElmtThumbnail(contPostImgId[i], "./posts/" + recommendedContentL[i] + "/thumbnail.jpg");
         document.getElementById(contPostDateId[i]).innerHTML = getTitleDate(recommendedContentI[i]);
         document.getElementById(contPostTitleId[i]).innerHTML = getTitleOnly(recommendedContentI[i]);
         document.getElementById(contPostCardId[i]).style.display = 'block';
