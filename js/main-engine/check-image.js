@@ -6,6 +6,17 @@ function checkImgExist(url) {
     if(http.status == 200){
         return url;
     }else{
-        return "./assets/nothumb.jpg"
+        return "./assets/nothumb.jpg";
     }
+}
+
+function setElmtThumbnail(elmtID, url){
+    var thumbnail = document.createElement('img');
+    thumbnail.onload = function() {
+        document.getElementById(elmtID).src = url;
+    }
+    thumbnail.onerror = function() {
+        console.log('Could not load thumbnail for '+elmtID);
+    }
+    thumbnail.src = url;
 }
