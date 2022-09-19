@@ -4,6 +4,9 @@ function fiterSearchKeyword(input){
 
 function startSearch(){
     var keyword = fiterSearchKeyword(document.getElementById("searchInput").value);
+    if(!keyword){
+        keyword = fiterSearchKeyword(document.getElementById("searchInputM").value);
+    }
     if(keyword){
         location.href = "./loader.html?search=" + keyword;
     }
@@ -26,7 +29,9 @@ function loadContentSearch(arrIndex, arrLower, urlRequest, pageRequest){
         }
     }
     if(searchHitCount <= 0){
-        pageHTML = pageHTML.concat("<p>No results found! for keyword " + pageRequest + "</p>");
+        pageHTML = pageHTML.concat("<p>No results found! for keyword ");
+        pageHTML = pageHTML.concat(getCleanedTitle(pageRequest));
+        pageHTML = pageHTML.concat("</p>");
     }
     document.getElementById('main-content').innerHTML = pageHTML;
 }
