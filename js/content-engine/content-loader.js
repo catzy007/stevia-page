@@ -12,7 +12,7 @@ function loadContentIndex(){
     if(pageRequest[1]){
         executeXhr("./pages/category/index.md", loadContentCategory, "CATEGORY", "category");
         if(typeRequest[1] == "post"){
-            loadContentPost(urlRequest, pageRequest[1]);
+            loadContentPost(urlRequest, pageRequest[1], fetchContentTitle(pageRequest[1], arrIndex));
         }else if(typeRequest[1] == "pages"){
             loadContentPages(urlRequest, pageRequest[1]);
         }else if(typeRequest[1] == "index"){
@@ -22,6 +22,8 @@ function loadContentIndex(){
         }else if(typeRequest[1] == "search"){
             //require search-engine/search.js
             loadContentSearch(arrIndex, arrLower, urlRequest, pageRequest[1]);
+        }else if(typeRequest[1] == "unindexed"){
+            loadPageUnindexed(urlRequest, pageRequest[1]);
         }else{
             document.location.href = './';
         }
@@ -31,5 +33,15 @@ function loadContentIndex(){
         document.location.href = './';
     }
 
+    loadSiteBranding();
     loadSiteCopyright();
+}
+
+function fetchContentTitle(pageRequest1, arrIndex){
+    for(var i=0; i<arrIndex.length; i++){
+        if(arrIndex[i].toLowerCase().trim() == pageRequest1){
+            return arrIndex[i];
+        }
+    }
+    return pageRequest1;
 }

@@ -25,203 +25,220 @@
     <script src="./js/homepage-engine/homepage-latest.js"></script>
 </head>
 <body>
-<div class="container mycontainer">
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand">Stevia Page</a>
-            </div>
-            <div class="collapse navbar-collapse" id="myNavbar">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="./">Home</a></li>
-                    <li><a href="./loader.html?index=all">Index</a></li>
-                    <li><a href="./loader.html?pages=contact">Contact</a></li>
-                    <li><a href="./loader.html?pages=about">About</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <br>
-    <div class="row">
-        <div class="col-sm-8">
-            <div id="featuredPostCard" hidden class="featured-card clickable" onclick="location.href='#'">
-                <div class="img-thumbnail embed-responsive embed-responsive-4by3">
-                    <img id="featuredPostImg" class="embed-responsive-item" src="./assets/nothumb.jpg" alt="Featured Posts" width="800" height="600"> 
-                </div>
-                <h5 id="featuredPostDate">Month DD, YYYY</h5>
-                <h4 id="featuredPostTitle">Featured post title</h4>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="input-group search-container">
-                <input id="searchInput" type="text" class="form-control" placeholder="Search.."/>
-                <div class="input-group-btn">
-                    <button class="btn" type="submit" onclick="startSearch();">
-                        <span class="glyphicon glyphicon-search"></span>
+    <div class="container mycontainer">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
                     </button>
+                    <a id="siteBranding" class="navbar-brand"></a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="./">Home</a></li>
+                        <li><a href="./loader.html?index=all">Index</a></li>
+                        <li><a href="./loader.html?pages=contact">Contact</a></li>
+                        <li><a href="/loader.html?pages=about">About</a></li>
+                        <li id="stevia-mobile-mode1"><a href="./loader.html?category=index">Category</a></li>
+                    </ul>
                 </div>
             </div>
-            <br>
-            <h4 class="text-page-color">Category</h4>
-            <div id="categoryList" hidden></div>
+        </nav>
+    
+        <div id="stevia-mobile-mode1" class="row">
+            <div class="col-sm-12">
+                <div class="input-group search-container">
+                    <input id="searchInput" type="text" class="form-control" placeholder="Search.."/>
+                    <div class="input-group-btn">
+                        <button class="btn" type="submit" onclick="startSearch();">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <br>
+        <h4 id="stevia-mobile-mode1" class="text-page-color">Featured Post</h4>
+        <div class="row">
+            <div class="col-sm-8">
+                <div id="featuredPostCard" hidden class="featured-card clickable" onclick="location.href='#'">
+                    <div class="img-thumbnail embed-responsive embed-responsive-4by3">
+                        <img id="featuredPostImg" class="embed-responsive-item" src="./assets/nothumb.jpg" alt="Featured Posts" width="800" height="600"> 
+                    </div>
+                    <h5 id="featuredPostDate">Month DD, YYYY</h5>
+                    <h4 id="featuredPostTitle">Featured post title</h4>
+                </div>
+            </div>
+            <div class="col-sm-4" id="stevia-mobile-mode2">
+                <div class="input-group search-container">
+                    <input id="searchInput" type="text" class="form-control" placeholder="Search.."/>
+                    <div class="input-group-btn">
+                        <button class="btn" type="submit" onclick="startSearch();">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                    </div>
+                </div>
+                <br>
+                <div>
+                    <h4 class="text-page-color">Category</h4>
+                    <div id="categoryList" hidden></div>
+                </div>
+            </div>
+        </div>
+    
+        <h4 id="latestPostH4" class="text-page-color" hidden>Latest Posts</h4>
+        <div class="row row-eq-height">
+            <div class="col-sm-4">
+                <a id="latestPostCard1" hidden class="card" href="#">
+                    <div class="img-thumbnail embed-responsive embed-responsive-4by3">
+                        <img loading="lazy" id="latestPostImg1" src="./assets/nothumb.jpg" class="embed-responsive-item" alt="Latest Post Image 1" width="400" height="300"> 
+                    </div>
+                    <br>
+                    <p id="latestPostDate1">Month DD, YYYY</p>
+                    <p id="latestPostTitle1">Latest Post Title 1</p>
+                </a>
+            </div>
+            <div class="col-sm-4">
+                <a id="latestPostCard2" hidden class="card" href="#">
+                    <div class="img-thumbnail embed-responsive embed-responsive-4by3">
+                        <img loading="lazy" id="latestPostImg2" src="./assets/nothumb.jpg" class="embed-responsive-item" alt="Latest Post Image 2" width="400" height="300"> 
+                    </div>
+                    <br>
+                    <p id="latestPostDate2">Month DD, YYYY</p>
+                    <p id="latestPostTitle2">Latest Post Title 2</p>
+                </a>
+            </div>
+            <div class="col-sm-4">
+                <a id="latestPostCard3" hidden class="card" href="#">
+                    <div class="img-thumbnail embed-responsive embed-responsive-4by3">
+                        <img loading="lazy" id="latestPostImg3" src="./assets/nothumb.jpg" class="embed-responsive-item" alt="Latest Post Image 3" width="400" height="300"> 
+                    </div>
+                    <br>
+                    <p id="latestPostDate3">Month DD, YYYY</p>
+                    <p id="latestPostTitle3">Latest Post Title 3</p>
+                </a>
+            </div>
+        </div>
+        <div class="row row-eq-height">
+            <div class="col-sm-4">
+                <a id="latestPostCard4" hidden class="card" href="#">
+                    <div class="img-thumbnail embed-responsive embed-responsive-4by3">
+                        <img loading="lazy" id="latestPostImg4" src="./assets/nothumb.jpg" class="embed-responsive-item" alt="Latest Post Image 4" width="400" height="300"> 
+                    </div>
+                    <br>
+                    <p id="latestPostDate4">Month DD, YYYY</p>
+                    <p id="latestPostTitle4">Latest Post Title 4</p>
+                </a>
+            </div>
+            <div class="col-sm-4">
+                <a id="latestPostCard5" hidden class="card" href="#">
+                    <div class="img-thumbnail embed-responsive embed-responsive-4by3">
+                        <img loading="lazy" id="latestPostImg5" src="./assets/nothumb.jpg" class="embed-responsive-item" alt="Latest Post Image 5" width="400" height="300"> 
+                    </div>
+                    <br>
+                    <p id="latestPostDate5">Month DD, YYYY</p>
+                    <p id="latestPostTitle5">Latest Post Title 5</p>
+                </a>
+            </div>
+            <div class="col-sm-4">
+                <a id="latestPostCard6" hidden class="card" href="#">
+                    <div class="img-thumbnail embed-responsive embed-responsive-4by3">
+                        <img loading="lazy" id="latestPostImg6" src="./assets/nothumb.jpg" class="embed-responsive-item" alt="Latest Post Image 6" width="400" height="300"> 
+                    </div>
+                    <br>
+                    <p id="latestPostDate6">Month DD, YYYY</p>
+                    <p id="latestPostTitle6">Latest Post Title 6</p>
+                </a>
+            </div>
+        </div>
+    
+        <h4 id="recommendedPostH4" class="text-page-color" hidden>Recommended Posts</h4>
+        <div class="row row-eq-height">
+            <div class="col-sm-4">
+                <a id="recommendedPostCard1" hidden class="card" href="#">
+                    <div class="img-thumbnail embed-responsive embed-responsive-4by3">
+                        <img loading="lazy" id="recommendedPostImg1" src="./assets/nothumb.jpg" class="embed-responsive-item" alt="Recommended Post Image 1" width="400" height="300"> 
+                    </div>
+                    <br>
+                    <p id="recommendedPostDate1">Month DD, YYYY</p>
+                    <p id="recommendedPostTitle1">Recommended Post Title 1</p>
+                </a>
+            </div>
+            <div class="col-sm-4">
+                <a id="recommendedPostCard2" hidden class="card" href="#">
+                    <div class="img-thumbnail embed-responsive embed-responsive-4by3">
+                        <img loading="lazy" id="recommendedPostImg2" src="./assets/nothumb.jpg" class="embed-responsive-item" alt="Recommended Post Image 2" width="400" height="300"> 
+                    </div>
+                    <br>
+                    <p id="recommendedPostDate2">Month DD, YYYY</p>
+                    <p id="recommendedPostTitle2">Recommended Post Title 2</p>
+                </a>
+            </div>
+            <div class="col-sm-4">
+                <a id="recommendedPostCard3" hidden class="card" href="#">
+                    <div class="img-thumbnail embed-responsive embed-responsive-4by3">
+                        <img loading="lazy" id="recommendedPostImg3" src="./assets/nothumb.jpg" class="embed-responsive-item" alt="Recommended Post Image 3" width="400" height="300"> 
+                    </div>
+                    <br>
+                    <p id="recommendedPostDate3">Month DD, YYYY</p>
+                    <p id="recommendedPostTitle3">Recommended Post Title 3</p>
+                </a>
+            </div>
+        </div>
+        <div class="row row-eq-height">
+            <div class="col-sm-4">
+                <a id="recommendedPostCard4" hidden class="card" href="#">
+                    <div class="img-thumbnail embed-responsive embed-responsive-4by3">
+                        <img loading="lazy" id="recommendedPostImg4" src="./assets/nothumb.jpg" class="embed-responsive-item" alt="Recommended Post Image 4" width="400" height="300"> 
+                    </div>
+                    <br>
+                    <p id="recommendedPostDate4">Month DD, YYYY</p>
+                    <p id="recommendedPostTitle4">Recommended Post Title 4</p>
+                </a>
+            </div>
+            <div class="col-sm-4">
+                <a id="recommendedPostCard5" hidden class="card" href="#">
+                    <div class="img-thumbnail embed-responsive embed-responsive-4by3">
+                        <img loading="lazy" id="recommendedPostImg5" src="./assets/nothumb.jpg" class="embed-responsive-item" alt="Recommended Post Image 5" width="400" height="300"> 
+                    </div>
+                    <br>
+                    <p id="recommendedPostDate5">Month DD, YYYY</p>
+                    <p id="recommendedPostTitle5">Recommended Post Title 5</p>
+                </a>
+            </div>
+            <div class="col-sm-4">
+                <a id="recommendedPostCard6" hidden class="card" href="#">
+                    <div class="img-thumbnail embed-responsive embed-responsive-4by3">
+                        <img loading="lazy" id="recommendedPostImg6" src="./assets/nothumb.jpg" class="embed-responsive-item" alt="Recommended Post Image 6" width="400" height="300"> 
+                    </div>
+                    <br>
+                    <p id="recommendedPostDate6">Month DD, YYYY</p>
+                    <p id="recommendedPostTitle6">Recommended Post Title 6</p>
+                </a>
+            </div>
         </div>
     </div>
-
-    <h4 id="latestPostH4" class="text-page-color" hidden>Latest Posts</h4>
-    <div class="row">
-        <div class="col-sm-4">
-            <a id="latestPostCard1" hidden class="card" href="#">
-                <div class="img-thumbnail embed-responsive embed-responsive-4by3">
-                    <img loading="lazy" id="latestPostImg1" src="./assets/nothumb.jpg" class="embed-responsive-item" alt="Latest Post Image 1" width="400" height="300"> 
-                </div>
-                <br>
-                <p id="latestPostDate1">Month DD, YYYY</p>
-                <p id="latestPostTitle1">Latest Post Title 1</p>
-            </a>
-        </div>
-        <div class="col-sm-4">
-            <a id="latestPostCard2" hidden class="card" href="#">
-                <div class="img-thumbnail embed-responsive embed-responsive-4by3">
-                    <img loading="lazy" id="latestPostImg2" src="./assets/nothumb.jpg" class="embed-responsive-item" alt="Latest Post Image 2" width="400" height="300"> 
-                </div>
-                <br>
-                <p id="latestPostDate2">Month DD, YYYY</p>
-                <p id="latestPostTitle2">Latest Post Title 2</p>
-            </a>
-        </div>
-        <div class="col-sm-4">
-            <a id="latestPostCard3" hidden class="card" href="#">
-                <div class="img-thumbnail embed-responsive embed-responsive-4by3">
-                    <img loading="lazy" id="latestPostImg3" src="./assets/nothumb.jpg" class="embed-responsive-item" alt="Latest Post Image 3" width="400" height="300"> 
-                </div>
-                <br>
-                <p id="latestPostDate3">Month DD, YYYY</p>
-                <p id="latestPostTitle3">Latest Post Title 3</p>
-            </a>
+    
+    <div class="container container-footer">
+        <br><br>
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <p><span id="siteCopyright"></span></p>
+                <p>Made with <span style="color:red">&#9829;</span> using Stevia Page</p>
+            </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-sm-4">
-            <a id="latestPostCard4" hidden class="card" href="#">
-                <div class="img-thumbnail embed-responsive embed-responsive-4by3">
-                    <img loading="lazy" id="latestPostImg4" src="./assets/nothumb.jpg" class="embed-responsive-item" alt="Latest Post Image 4" width="400" height="300"> 
-                </div>
-                <br>
-                <p id="latestPostDate4">Month DD, YYYY</p>
-                <p id="latestPostTitle4">Latest Post Title 4</p>
-            </a>
-        </div>
-        <div class="col-sm-4">
-            <a id="latestPostCard5" hidden class="card" href="#">
-                <div class="img-thumbnail embed-responsive embed-responsive-4by3">
-                    <img loading="lazy" id="latestPostImg5" src="./assets/nothumb.jpg" class="embed-responsive-item" alt="Latest Post Image 5" width="400" height="300"> 
-                </div>
-                <br>
-                <p id="latestPostDate5">Month DD, YYYY</p>
-                <p id="latestPostTitle5">Latest Post Title 5</p>
-            </a>
-        </div>
-        <div class="col-sm-4">
-            <a id="latestPostCard6" hidden class="card" href="#">
-                <div class="img-thumbnail embed-responsive embed-responsive-4by3">
-                    <img loading="lazy" id="latestPostImg6" src="./assets/nothumb.jpg" class="embed-responsive-item" alt="Latest Post Image 6" width="400" height="300"> 
-                </div>
-                <br>
-                <p id="latestPostDate6">Month DD, YYYY</p>
-                <p id="latestPostTitle6">Latest Post Title 6</p>
-            </a>
-        </div>
-    </div>
-
-    <h4 id="recommendedPostH4" class="text-page-color" hidden>Recommended Posts</h4>
-    <div class="row">
-        <div class="col-sm-4">
-            <a id="recommendedPostCard1" hidden class="card" href="#">
-                <div class="img-thumbnail embed-responsive embed-responsive-4by3">
-                    <img loading="lazy" id="recommendedPostImg1" src="./assets/nothumb.jpg" class="embed-responsive-item" alt="Recommended Post Image 1" width="400" height="300"> 
-                </div>
-                <br>
-                <p id="recommendedPostDate1">Month DD, YYYY</p>
-                <p id="recommendedPostTitle1">Recommended Post Title 1</p>
-            </a>
-        </div>
-        <div class="col-sm-4">
-            <a id="recommendedPostCard2" hidden class="card" href="#">
-                <div class="img-thumbnail embed-responsive embed-responsive-4by3">
-                    <img loading="lazy" id="recommendedPostImg2" src="./assets/nothumb.jpg" class="embed-responsive-item" alt="Recommended Post Image 2" width="400" height="300"> 
-                </div>
-                <br>
-                <p id="recommendedPostDate2">Month DD, YYYY</p>
-                <p id="recommendedPostTitle2">Recommended Post Title 2</p>
-            </a>
-        </div>
-        <div class="col-sm-4">
-            <a id="recommendedPostCard3" hidden class="card" href="#">
-                <div class="img-thumbnail embed-responsive embed-responsive-4by3">
-                    <img loading="lazy" id="recommendedPostImg3" src="./assets/nothumb.jpg" class="embed-responsive-item" alt="Recommended Post Image 3" width="400" height="300"> 
-                </div>
-                <br>
-                <p id="recommendedPostDate3">Month DD, YYYY</p>
-                <p id="recommendedPostTitle3">Recommended Post Title 3</p>
-            </a>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-4">
-            <a id="recommendedPostCard4" hidden class="card" href="#">
-                <div class="img-thumbnail embed-responsive embed-responsive-4by3">
-                    <img loading="lazy" id="recommendedPostImg4" src="./assets/nothumb.jpg" class="embed-responsive-item" alt="Recommended Post Image 4" width="400" height="300"> 
-                </div>
-                <br>
-                <p id="recommendedPostDate4">Month DD, YYYY</p>
-                <p id="recommendedPostTitle4">Recommended Post Title 4</p>
-            </a>
-        </div>
-        <div class="col-sm-4">
-            <a id="recommendedPostCard5" hidden class="card" href="#">
-                <div class="img-thumbnail embed-responsive embed-responsive-4by3">
-                    <img loading="lazy" id="recommendedPostImg5" src="./assets/nothumb.jpg" class="embed-responsive-item" alt="Recommended Post Image 5" width="400" height="300"> 
-                </div>
-                <br>
-                <p id="recommendedPostDate5">Month DD, YYYY</p>
-                <p id="recommendedPostTitle5">Recommended Post Title 5</p>
-            </a>
-        </div>
-        <div class="col-sm-4">
-            <a id="recommendedPostCard6" hidden class="card" href="#">
-                <div class="img-thumbnail embed-responsive embed-responsive-4by3">
-                    <img loading="lazy" id="recommendedPostImg6" src="./assets/nothumb.jpg" class="embed-responsive-item" alt="Recommended Post Image 6" width="400" height="300"> 
-                </div>
-                <br>
-                <p id="recommendedPostDate6">Month DD, YYYY</p>
-                <p id="recommendedPostTitle6">Recommended Post Title 6</p>
-            </a>
-        </div>
-    </div>
-</div>
-
-<div class="container container-footer">
-    <br><br>
-    <div class="row">
-        <div class="col-sm-12 text-center">
-            <p><span id="siteCopyright"></span></p>
-            <p>Made with <a style="color:red">&#9829;</a> using Stevia Page</p>
-        </div>
-    </div>
-</div>
-
-<script>
-    window.scrollTo(0, 0); 
-    executeXhr("./posts/index.md", loadHomepageIndex, "POST-INDEX", "latest-post");
-</script>
-<script src="./js/jquery.min.js"></script>
-<script src="./js/bootstrap.min.js"></script>
-<script src="./js/showdown.min.js"></script>
-</body>
-</html>
+    
+    <script>
+        window.scrollTo(0, 0); 
+        executeXhr("./posts/index.md", loadHomepageIndex, "POST-INDEX", "latest-post");
+    </script>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/showdown.min.js"></script>
+    </body>
+    </html>

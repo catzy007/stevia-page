@@ -28,6 +28,7 @@ function loadHomepageRecommended(arrIndex, arrLower){
 
     for(var i=0; i<recLoadMax; i++){
         document.getElementById(recPostCardId[i]).href = "./loader.html?post=" + recommendedPostL[i];
+        // document.getElementById(recPostImgId[i]).src = checkImgExist("./posts/" + recommendedPostL[i] + "/thumbnail.jpg");
         setElmtThumbnail(recPostImgId[i], "./posts/" + recommendedPostL[i] + "/thumbnail.jpg");
         document.getElementById(recPostDateId[i]).innerHTML = getTitleDate(recommendedPostI[i]);
         document.getElementById(recPostTitleId[i]).innerHTML = getTitleOnly(recommendedPostI[i]);

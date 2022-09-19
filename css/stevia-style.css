@@ -65,7 +65,7 @@ body {
     box-shadow: 5px 5px 10px #ddd;
 }
 .card {
-    min-height: 24em;
+    /* min-height: 24em; */
     background-color: #fff;
     color: black;
     border-radius: 10px 10px 0px 0px;
@@ -73,6 +73,24 @@ body {
     margin-bottom: 2em;
     box-shadow: 5px 5px 10px #ddd;
     cursor: pointer;
+}
+@media (min-width: 767px) {
+    .row-eq-height {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+    }
+    .card {
+        height: 90%;
+        background-color: #fff;
+        color: black;
+        border-radius: 10px 10px 0px 0px;
+        padding: 1em;
+        margin-bottom: 2em;
+        box-shadow: 5px 5px 10px #ddd;
+        cursor: pointer;
+    }
 }
 .card:hover {
     color: black;
@@ -83,7 +101,13 @@ body {
     width: auto;
     box-shadow: 5px 5px 10px #ddd;
 }
+.search-container input {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
 .search-container button {
+    -webkit-box-shadow: none;
+    box-shadow: none;
     height: 3em;
     background: #fff;
     font-size: large;
@@ -104,4 +128,19 @@ body {
 /* font color */
 .text-page-color {
     color:#55688A;
+}
+/* Stevia Mobile */
+#stevia-mobile-mode1 {
+    display: none;
+}
+#stevia-mobile-mode2 {
+    display: block;
+}
+@media (max-width: 768px) {
+    #stevia-mobile-mode1 {
+        display: block;
+    }
+    #stevia-mobile-mode2 {
+        display: none;
+    }
 }

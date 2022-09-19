@@ -8,5 +8,6 @@ function loadHomepageIndex(){
     executeXhr("./pages/category/index.md", loadHomepageCategory, "CATEGORY", "category");
     loadHomepageLatest(arrIndex, arrLower);
     loadHomepageRecommended(arrIndex, arrLower);
+    loadSiteBranding();
     loadSiteCopyright();
 }

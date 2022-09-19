@@ -1,7 +1,7 @@
-function loadContentPost(urlRequest, pageRequest){
+function loadContentPost(urlRequest, pageRequest, contentTitle){
     var contentPath = "./posts/"+pageRequest+"/content.md";
     setElmtThumbnail("featuredPostImg", "./posts/" + pageRequest + "/thumbnail.jpg");
-    setSiteIdentifier(pageRequest, urlRequest, capitalize(getTitleOnly(pageRequest)), "en-us");
+    setSiteIdentifier(pageRequest, urlRequest, getTitleOnly(contentTitle), "en-us");
     reqParseMarkdown("POST", contentPath);
 }
 

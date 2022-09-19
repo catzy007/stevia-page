@@ -29,6 +29,11 @@ function getSiteCopyright(){
 	return copyrightOwner;
 }
 
+function loadSiteBranding(){
+	console.log(WebsiteName);
+	document.getElementById('siteBranding').innerHTML = WebsiteName;
+}
+
 function loadSiteCopyright(){
 	var currentYear = new Date().getFullYear();
 	var copyrightOwner = getSiteCopyright();
