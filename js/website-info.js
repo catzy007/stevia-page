@@ -30,7 +30,7 @@ function getSiteCopyright(){
 }
 
 function loadSiteBranding(){
-	console.log(WebsiteName);
+	// console.log(WebsiteName);
 	document.getElementById('siteBranding').innerHTML = WebsiteName;
 }
 

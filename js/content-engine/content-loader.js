@@ -1,7 +1,8 @@
 function loadContentIndex(){
     var text = this.responseText;
-	var arrIndex = parseIndexArray(text);
-    var arrLower = parseIndexLower(text);
+    //set both index as immutable object
+	const arrIndex = Object.freeze(parseIndexArray(text)); 
+    const arrLower = Object.freeze(parseIndexLower(text));
     var urlRequest = getUrlRequest();
     var pageRequest = urlRequest.split("=");
     var typeRequest = pageRequest[0].split("?");

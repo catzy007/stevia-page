@@ -7,7 +7,7 @@ function loadContentPost(urlRequest, pageRequest, contentTitle){
 
 function loadContentPages(urlRequest, pageRequest){
     var contentPath = "./pages/"+pageRequest+"/content.md";
-    setElmtThumbnail("featuredPostImg", "./posts/" + pageRequest + "/thumbnail.jpg");
+    setElmtThumbnail("featuredPostImg", "./pages/" + pageRequest + "/thumbnail.jpg");
     setSiteIdentifier(pageRequest, urlRequest, capitalize(pageRequest), "en-us");
     reqParseMarkdown("PAGES", contentPath);
 }

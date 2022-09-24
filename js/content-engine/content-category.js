@@ -30,6 +30,7 @@ function parseCategoryPage(urlRequest, pageRequest){
     var arrCategory = parseIndexArray(text);
     var arrCategoryL = parseIndexLower(text);
     if(pageRequest == "index"){
+        setElmtThumbnail("featuredPostImg", "./posts/thumbnail.jpg");
         pageHTML = pageHTML.concat("<h4>Category</h4>");
         for(var i=0; i<arrCategory.length; i++){
             pageHTML = pageHTML.concat("<p>");
@@ -40,6 +41,7 @@ function parseCategoryPage(urlRequest, pageRequest){
             pageHTML = pageHTML.concat("</p>");
         }
     }else{
+        setElmtThumbnail("featuredPostImg", "./pages/category/"+pageRequest+".jpg");
         pageHTML = pageHTML.concat("<h4>"+capitalize(pageRequest)+"</h4>");
         for(var i=0; i<arrCategory.length; i++){
             pageHTML = pageHTML.concat("<p>");

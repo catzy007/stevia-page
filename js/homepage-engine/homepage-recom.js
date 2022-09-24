@@ -1,4 +1,7 @@
 function loadHomepageRecommended(arrIndex, arrLower){
+    //perform a shallow copy of both arrays
+    let arrIndexC = arrIndex.slice(0);
+    let arrLowerC = arrLower.slice(0);
     var recPostCardId = []; var recPostImgId = [];
     var recPostDateId = []; var recPostTitleId = [];
     var recommendedPostI = []; var recommendedPostL = [];
@@ -14,10 +17,13 @@ function loadHomepageRecommended(arrIndex, arrLower){
     }
 
     for(var i=0; i<recLoadMax; i++){
-        dice = Math.floor(Math.random() * arrIndex.length);
-        recommendedPostI.push(arrIndex[dice]); //arrIndex.splice(dice, 1); 
-        recommendedPostL.push(arrLower[dice]); //arrLower.splice(dice, 1);
+        dice = Math.floor(Math.random() * arrIndexC.length);
+        recommendedPostI.push(arrIndexC[dice]); 
+        recommendedPostL.push(arrLowerC[dice]);
+        arrIndexC.splice(dice, 1);
+        arrLowerC.splice(dice, 1);
     }
+    // console.log(arrIndex); console.log(arrIndexC);
     
     for(var i=1; i<recLoadMax+1; i++){
         recPostCardId.push("recommendedPostCard"+i.toString());
