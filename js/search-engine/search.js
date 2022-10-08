@@ -35,3 +35,9 @@ function loadContentSearch(arrIndex, arrLower, urlRequest, pageRequest){
     }
     document.getElementById('main-content').innerHTML = pageHTML;
 }
+
+function searchKeypressHandler(event){
+    if(event.key === "Enter"){
+        startSearch();
+    }
+}
