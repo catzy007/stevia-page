@@ -52,7 +52,7 @@
         <div id="stevia-mobile-mode1" class="row">
             <div class="col-sm-12">
                 <div class="input-group search-container">
-                    <input id="searchInputM" type="text" class="form-control" placeholder="Search.."/>
+                    <input id="searchInputM" type="text" class="form-control" placeholder="Search.." onkeydown="searchKeypressHandler(event)"/>
                     <div class="input-group-btn">
                         <button class="btn" type="submit" onclick="startSearch();">
                             <span class="glyphicon glyphicon-search"></span>
@@ -76,7 +76,7 @@
             </div>
             <div class="col-sm-4" id="stevia-mobile-mode2">
                 <div class="input-group search-container">
-                    <input id="searchInput" type="text" class="form-control" placeholder="Search.."/>
+                    <input id="searchInput" type="text" class="form-control" placeholder="Search.." onkeydown="searchKeypressHandler(event)"/>
                     <div class="input-group-btn">
                         <button class="btn" type="submit" onclick="startSearch();">
                             <span class="glyphicon glyphicon-search"></span>
