@@ -6,19 +6,26 @@ function loadPageUnindexed(urlRequest, pageRequest){
 
 function parseUnlistedIndex(){
     var text = this.responseText;
-    var pageHTML = "<h4>Unlisted Index</h4>";
     var arrUnlisted = parseIndexArray(text);
     var arrUnlistedL = parseIndexLower(text);
+
+    var mainContent = document.getElementById("main-content");
+    mainContent.innerHTML = "";
+    var pageTitle = document.createElement("h4");
+    pageTitle.innerHTML = "Unlisted Index";
+    mainContent.appendChild(pageTitle);
+
     if(arrUnlisted.length > 0){
         for(var i=0; i<arrUnlisted.length; i++){
-            pageHTML = pageHTML.concat("<p>");
-            pageHTML = pageHTML.concat("<a href='./loader.html?post="+ arrUnlistedL[i] +"'>");
-            pageHTML = pageHTML.concat(getTitleDate(arrUnlisted[i])+" - "+getTitleOnly(arrUnlisted[i]));
-            pageHTML = pageHTML.concat("</a>");
-            pageHTML = pageHTML.concat("</p>");
+            mainContent.appendChild(
+                IndexWrapper(
+                    arrUnlistedL[i],
+                    getTitleDate(arrUnlisted[i]),
+                    getTitleOnly(arrUnlisted[i])
+                )
+            );
         }
     }else{
-        pageHTML = pageHTML.concat("<p>Empty</p>");
+        mainContent.appendChild(emptyIndexWrapper());
     }
-    document.getElementById("main-content").innerHTML = pageHTML;
 }

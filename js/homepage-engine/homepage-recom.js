@@ -26,15 +26,14 @@ function loadHomepageRecommended(arrIndex, arrLower){
     // console.log(arrIndex); console.log(arrIndexC);
     
     for(var i=1; i<recLoadMax+1; i++){
-        recPostCardId.push("recommendedPostCard"+i.toString());
-        recPostImgId.push("recommendedPostImg"+i.toString());
-        recPostDateId.push("recommendedPostDate"+i.toString());
-        recPostTitleId.push("recommendedPostTitle"+i.toString());
+        recPostCardId.push("recommendedPostCard" + i.toString());
+        recPostImgId.push("recommendedPostImg" + i.toString());
+        recPostDateId.push("recommendedPostDate" + i.toString());
+        recPostTitleId.push("recommendedPostTitle" + i.toString());
     }
 
     for(var i=0; i<recLoadMax; i++){
         document.getElementById(recPostCardId[i]).href = "./loader.html?post=" + recommendedPostL[i];
-        // document.getElementById(recPostImgId[i]).src = checkImgExist("./posts/" + recommendedPostL[i] + "/thumbnail.jpg");
         setElmtThumbnail(recPostImgId[i], "./posts/" + recommendedPostL[i] + "/thumbnail.jpg");
         document.getElementById(recPostDateId[i]).innerHTML = getTitleDate(recommendedPostI[i]);
         document.getElementById(recPostTitleId[i]).innerHTML = getTitleOnly(recommendedPostI[i]);

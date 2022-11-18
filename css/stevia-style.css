@@ -16,6 +16,10 @@ body {
 .clickable {
     cursor: pointer;
 }
+.category-list, .category-list:hover {
+    color: #333;
+    text-decoration: none;
+}
 /* Navbar */
 .navbar-default {
     background-color: #fff;

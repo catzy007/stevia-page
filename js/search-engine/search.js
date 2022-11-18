@@ -12,26 +12,52 @@ function startSearch(){
     }
 }
 
+function searchKeypressHandler(event){
+    if(event.key === "Enter"){
+        startSearch();
+    }
+}
+
+function searchContentWrapper(targetUrl, targetDate, targetName){
+    var searchElmtPara = document.createElement("p");
+    var searchElmtAncr = document.createElement("a");
+    searchElmtAncr.innerHTML = targetDate + " - " + targetName;
+    searchElmtAncr.href = "./loader.html?category=" + targetUrl;
+    searchElmtPara.appendChild(searchElmtAncr);
+    return searchElmtPara;
+}
+
+function emptySearchWrapper(searchKeyword){
+    var SearchEmpty = document.createElement("p");
+    SearchEmpty.innerHTML = "No results found! for keyword " + searchKeyword;
+    return SearchEmpty;
+}
+
 function loadContentSearch(arrIndex, arrLower, urlRequest, pageRequest){
     var searchHitCount = 0;
-    var pageHTML = "<h4>Search</h4>";
     var keyword = pageRequest.toLowerCase().split('-').join(' ');
-    setSiteIdentifier(pageRequest, urlRequest, capitalize("search"), "en-us");
+    setSiteIdentifier(pageRequest, urlRequest, keyword + " - Search Results", "en-us");
     document.title = getSiteIdentifier()[2];
+
+    var mainContent = document.getElementById("main-content");
+    mainContent.innerHTML = "";
+    var pageTitle = document.createElement("h4");
+    pageTitle.innerHTML = "Search";
+    mainContent.appendChild(pageTitle);
+
     for(var i=0; i<arrIndex.length; i++){
         if(getTitleOnly(arrIndex[i]).toLowerCase().includes(keyword)){
             searchHitCount++;
-            pageHTML = pageHTML.concat("<p>");
-            pageHTML = pageHTML.concat("<a href='./loader.html?post="+ arrLower[i] +"'>");
-            pageHTML = pageHTML.concat(getTitleDate(arrIndex[i])+" - "+getTitleOnly(arrIndex[i]));
-            pageHTML = pageHTML.concat("</a>");
-            pageHTML = pageHTML.concat("</p>");
+            mainContent.appendChild(
+                searchContentWrapper(
+                    arrLower[i], 
+                    getTitleDate(arrIndex[i]), 
+                    getTitleOnly(arrIndex[i])
+                )
+            );
         }
     }
     if(searchHitCount <= 0){
-        pageHTML = pageHTML.concat("<p>No results found! for keyword ");
-        pageHTML = pageHTML.concat(getCleanedTitle(pageRequest));
-        pageHTML = pageHTML.concat("</p>");
+        mainContent.appendChild(emptySearchWrapper(getCleanedTitle(pageRequest)));
     }
-    document.getElementById('main-content').innerHTML = pageHTML;
 }

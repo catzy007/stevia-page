@@ -1,16 +1,41 @@
+function IndexWrapper(targetUrl, targetDate, targetName){
+    var IndexElmtPara = document.createElement("p");
+    var IndexElmtAncr = document.createElement("a");
+    IndexElmtAncr.innerHTML = targetDate + " - " + targetName;
+    IndexElmtAncr.href = "./loader.html?post=" + targetUrl;
+    IndexElmtPara.appendChild(IndexElmtAncr);
+    return IndexElmtPara;
+}
+
+function emptyIndexWrapper(){
+    var IndexEmpty = document.createElement("p");
+    IndexEmpty.innerHTML = "Empty";
+    return IndexEmpty;
+}
+
 function loadPageIndex(arrIndex, arrLower, urlRequest, pageRequest){
-    var pageHTML = "<h4>Index</h4>";
     setElmtThumbnail("featuredPostImg", "./posts/thumbnail.jpg");
     setSiteIdentifier(pageRequest, urlRequest, capitalize("index"), "en-us");
-    document.title = getSiteIdentifier()[2];
+
+    var mainContent = document.getElementById("main-content");
+    mainContent.innerHTML = "";
+    var pageTitle = document.createElement("h4");
+    pageTitle.innerHTML = "Index";
+    mainContent.appendChild(pageTitle);
+
+    if(arrIndex.length > 0){
     for(var i=0; i<arrIndex.length; i++){
         if(arrIndex[i].length > 1){
-            pageHTML = pageHTML.concat("<p>");
-            pageHTML = pageHTML.concat("<a href='./loader.html?post="+ arrLower[i] +"'>");
-            pageHTML = pageHTML.concat(getTitleDate(arrIndex[i])+" - "+getTitleOnly(arrIndex[i]));
-            pageHTML = pageHTML.concat("</a>");
-            pageHTML = pageHTML.concat("</p>");
+                mainContent.appendChild(
+                    IndexWrapper(
+                        arrLower[i],
+                        getTitleDate(arrIndex[i]),
+                        getTitleOnly(arrIndex[i])
+                    )
+                );
         }
     }
-    document.getElementById('main-content').innerHTML = pageHTML;
+    }else{
+        mainContent.appendChild(emptyIndexWrapper());
+    }
 }
