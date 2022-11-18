@@ -6,7 +6,7 @@ function loadHomepageIndex(){
     // console.log(arrIndex); console.log(arrLower);
 
     executeXhr("./posts/featured.md", loadHomepageFeatured, "FEATURED", "featured");
-    executeXhr("./pages/category/index.md", loadHomepageCategory, "CATEGORY", "category");
+    executeXhr("./pages/category/index.md", loadCategoryList, "CATEGORY", "category");
     loadHomepageLatest(arrIndex, arrLower);
     loadHomepageRecommended(arrIndex, arrLower);
     loadSiteBranding();

@@ -3,8 +3,8 @@ function setElmtThumbnail(elmtID, url){
     thumbnail.onload = function() {
         document.getElementById(elmtID).src = url;
     }
-    // thumbnail.onerror = function() {
-    //     console.log('Could not load thumbnail for '+elmtID);
-    // }
+    thumbnail.onerror = function() {
+        console.log("#![THUMBNAIL] Could not load thumbnail for " + elmtID);
+    }
     thumbnail.src = url;
 }
