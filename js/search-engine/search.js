@@ -22,7 +22,7 @@ function searchContentWrapper(targetUrl, targetDate, targetName){
     var searchElmtPara = document.createElement("p");
     var searchElmtAncr = document.createElement("a");
     searchElmtAncr.innerHTML = targetDate + " - " + targetName;
-    searchElmtAncr.href = "./loader.html?category=" + targetUrl;
+    searchElmtAncr.href = "./loader.html?post=" + targetUrl;
     searchElmtPara.appendChild(searchElmtAncr);
     return searchElmtPara;
 }
