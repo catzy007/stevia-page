@@ -1,4 +1,4 @@
-/* Disale horizontal scroll */
+/* Disable horizontal scroll */
 html, body {
     overflow-x: hidden;
 }
@@ -78,6 +78,10 @@ body {
     box-shadow: 5px 5px 10px #ddd;
     cursor: pointer;
 }
+.card:hover, .card:focus {
+    color: black;
+    text-decoration: none;
+}
 @media (min-width: 767px) {
     .row-eq-height {
         display: -webkit-box;
@@ -95,10 +99,6 @@ body {
         box-shadow: 5px 5px 10px #ddd;
         cursor: pointer;
     }
-}
-.card:hover {
-    color: black;
-    text-decoration: none;
 }
 /* Search box */
 .search-container {
