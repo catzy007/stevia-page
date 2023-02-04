@@ -57,7 +57,7 @@ function parseCategoryPage(urlRequest, pageRequest){
     var pageTitle = document.createElement("h4");
 
     if(pageRequest == "index"){
-        setElmtThumbnail("featuredPostImg", "./posts/thumbnail.jpg");
+        setElmtThumbnail("featuredPostImg", "./posts/thumbnail.jpg", "mobile");
         pageTitle.innerHTML = "Category";
         mainContent.appendChild(pageTitle);
         for(var i=0; i<arrCategory.length; i++){
@@ -70,7 +70,7 @@ function parseCategoryPage(urlRequest, pageRequest){
             );
         }
     }else{
-        setElmtThumbnail("featuredPostImg", "./pages/category/" + pageRequest + ".jpg");
+        setElmtThumbnail("featuredPostImg", "./pages/category/" + pageRequest + ".jpg", "mobile");
         pageTitle.innerHTML = capitalize(pageRequest);
         mainContent.appendChild(pageTitle);
         for(var i=0; i<arrCategory.length; i++){
