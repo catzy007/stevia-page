@@ -14,7 +14,7 @@ function emptyIndexWrapper(){
 }
 
 function loadPageIndex(arrIndex, arrLower, urlRequest, pageRequest){
-    setElmtThumbnail("featuredPostImg", "./posts/thumbnail.jpg");
+    setElmtThumbnail("featuredPostImg", "./posts/thumbnail.jpg", "mobile");
     setSiteIdentifier(pageRequest, urlRequest, capitalize("index"), "en-us");
 
     var mainContent = document.getElementById("main-content");

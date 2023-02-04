@@ -26,6 +26,7 @@ function loadContentIndex(){
             document.location.href = './';
         }
         document.getElementById("featuredPostCard").style.display = 'block';
+        document.getElementById("featuredPostCardM").style.display = 'block';
         loadContentRecommended(arrIndex, arrLower);
     }else{
         document.location.href = './';
