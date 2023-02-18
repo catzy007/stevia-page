@@ -29,8 +29,11 @@ function getSiteCopyright(){
 	return copyrightOwner;
 }
 
+function loadSiteMainTitle(){
+	document.title = WebsiteName;
+}
+
 function loadSiteBranding(){
-	// console.log(WebsiteName);
 	document.getElementById('siteBranding').innerHTML = WebsiteName;
 }
 

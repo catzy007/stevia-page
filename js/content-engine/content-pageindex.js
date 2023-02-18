@@ -33,8 +33,8 @@ function loadPageIndex(arrIndex, arrLower, urlRequest, pageRequest){
                         getTitleOnly(arrIndex[i])
                     )
                 );
+            }
         }
-    }
     }else{
         mainContent.appendChild(emptyIndexWrapper());
     }
