@@ -27,8 +27,8 @@ At the heart it uses [ShowdownJS](https://github.com/showdownjs/showdown),
 └── posts
     ├── YYYY-MM-DD-post-title-you-want-to-create
     │   ├── content.md (put your post content here)
-    │   ├── picture.jpg (post image)
     │   ├── thumbnail.jpg (post thumbnail)
+    │   ├── picture.jpg (post image)
     │   └── document.doc (downloadable document)
     └── index.md (post index)
 ```
@@ -41,10 +41,10 @@ YYYY-MM-DD-post-title-you-want-to-create
 ```
 3. Go to directory you just made and create `content.md`.
 4. Fill `content.md` with your content using markdown &/ html format.
-5. Create `thumbnail.jpg` file with `800 x 600` resolution.
+5. Create `thumbnail.jpg` file with `4:3` aspect ratio.
 6. Then open `/posts/index.md` and add directory name `YYYY-MM-DD-post-title-you-want-to-create` to posts index.
 7. Git add, commit, and push.
-8. If you set CI/CD, your blog will automatically updated.
+8. If you set CI/CD, your blog will automatically update.
 
 > Make sure only using `1234567890abcdefghijklmnopqrstuvwxyz` and `-` as index separator
 
@@ -54,4 +54,4 @@ YYYY-MM-DD-post-title-you-want-to-create
 * No need to regenerate static page after content update.
 
 ### Cons
-* Spacing and layouting still not perfect sometimes but can be avoided using HTML.
+* Spacing and layout still not perfect sometimes but can be avoided using HTML.

@@ -7,6 +7,8 @@
 	function showMarkdown(type){
 		var markdown = (this.responseText);
 		var converter = new showdown.Converter();
+		converter.setOption('tables', true);
+		converter.setOption('strikethrough', true);
 		var html = converter.makeHtml(markdown);
 		document.getElementById('main-content').innerHTML = html;
 

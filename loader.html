@@ -30,7 +30,7 @@
     <div class="container stevia-container-header">
         <nav class="navbar navbar-expand-lg stevia-navbar">
             <div class="container-fluid">
-                <a id="siteBranding" class="navbar-brand stevia-navbar-brand" href="./#"></a>
+                <a id="siteBranding" class="navbar-brand stevia-navbar-brand" href="./"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="bi-list stevia-color"></span>
                 </button>
@@ -106,16 +106,20 @@
     
     <div class="container stevia-container-main">
         <div class="row">
-            <div id="main-content" class="col-sm-12 content">
-                <h4 class="text-center">
-                Loading Webpages. If nothing happen in 
-                few seconds, check your connection and 
-                make sure to use the latest Chrome 
-                or Firefox web browser.
-                </h4>
+            <div class="col-md-12">
+                <article id="main-content">
+                    <h4 class="text-center">
+                    Loading Webpages. If nothing happen in 
+                    few seconds, check your connection and 
+                    make sure to use the latest Chrome 
+                    or Firefox web browser.
+                    </h4>
+                </article>
             </div>
         </div>
-        <br>
+    </div>
+
+    <div class="container stevia-container-footer">
         <h1 id="recommendedContent" class="stevia-color display-4 stevia-hidden">Recommended Posts</h1>
         <div class="row">
             <div class="col-md-4 d-flex align-items-stretch">
@@ -146,9 +150,6 @@
                 </a>
             </div>
         </div>
-    </div>
-    
-    <div class="container stevia-container-footer">
         <div class="row">
             <div class="col text-center">
                 <p><span id="siteCopyright"></span></p>
@@ -158,10 +159,9 @@
     </div>
     
     <script>
-        window.onload = function mainLoader(){
-            window.scrollTo(0, 0); 
-            executeXhr("./posts/index.md", loadContentIndex, "POST-INDEX", "latest-post");
-        }
+        window.scrollTo(0, 0); 
+        loadSiteMainTitle();
+        executeXhr("./posts/index.md", loadContentIndex, "POST-INDEX", "latest-post");
     </script>
     <script src="./js/bootstrap.bundle.min.js"></script>
     <script src="./js/showdown.min.js"></script>
