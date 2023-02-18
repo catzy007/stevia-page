@@ -4,7 +4,7 @@
 
 This is website (blog) template that serves static page encoded in Markdown. 
 At the heart it uses [ShowdownJS](https://github.com/showdownjs/showdown), 
-[Vanilla.js](https://vanilla-js.com/) and 
+[Vanilla.js](http://vanilla-js.com/) and 
 [XMLHttpRequest API (XHR)](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest).
 
 ### Directory structure
