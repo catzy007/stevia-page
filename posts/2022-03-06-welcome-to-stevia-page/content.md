@@ -6,7 +6,7 @@ by Bagus Saputra in his spare time. Stevia page primarily written in
 [JavaScript](https://www.w3schools.com/js/) programming language with 
 [ShowdownJS](https://github.com/showdownjs/showdown) as Markdown parser and 
 [Bootstrap 3](https://getbootstrap.com/docs/3.3/) as responsive interface. 
-**But** you don't have to worry about any of that to use Stevia page. 
+`But` you don't have to worry about any of that to use Stevia page. 
 Stevia name is derived from Stevia leaf which has sweet taste. Stevia page 
 meant to be sweet and easy way to have website with infinite customizability 
 for one who need it while maintaining ease of use for everyone else. 
