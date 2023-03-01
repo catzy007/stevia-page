@@ -5,11 +5,14 @@
 
 //markdown parser
 	function showMarkdown(type){
+		// console.time("Parser");
+
 		var markdown = (this.responseText);
 		var converter = new showdown.Converter();
 		converter.setOption('tables', true);
 		converter.setOption('strikethrough', true);
 		var html = converter.makeHtml(markdown);
+		html = html.replace(/<pre><code>/g, '<pre class="language-bash"><code>');
 		document.getElementById('main-content').innerHTML = html;
 
 		// console.log(getSiteIdentifier()[2]);
@@ -21,6 +24,10 @@
 		if(type == "POST" && enableComments()){
 			loadComments();
 		}
+
+	//code highlighter
+		hljs.highlightAll();
+		// console.timeEnd("Parser");
 	}
 
 //load disqus comments
