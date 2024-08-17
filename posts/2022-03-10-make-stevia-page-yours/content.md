@@ -6,15 +6,9 @@ using Stevia Page.
 
 * Open your repository and open `index.html` file.
 * Then press `Edit this file` button.
-    <div class="row">
-        <div class="col-sm-1"></div>
-        <div class="col-sm-10">
-            <div class="img-thumbnail">
-                <img class="img-fluid" src="./posts/2022-03-10-make-stevia-page-yours/01.png" alt="img">
-            </div>
-        </div>
-        <div class="col-sm-1"></div>
-    </div>
+
+![img](./posts/2022-03-10-make-stevia-page-yours/01.png)
+
 * Change following to match your needs.
     ```
     <meta name="description" content="Your site description"/>
@@ -23,15 +17,8 @@ using Stevia Page.
     ```
 
 * Scroll down and press `Commit changes`
-    <div class="row">
-        <div class="col-sm-3"></div>
-        <div class="col-sm-6">
-            <div class="img-thumbnail">
-                <img class="img-fluid" src="./posts/2022-03-10-make-stevia-page-yours/02.png" alt="img">
-            </div>
-        </div>
-        <div class="col-sm-3"></div>
-    </div>
+
+![img](./posts/2022-03-10-make-stevia-page-yours/02.png)
 
 * Do the same with `loader.html` file.
 * Next, go to `js/website-info.js` and change below to match your needs.
@@ -46,12 +33,5 @@ using Stevia Page.
     ```
 
 * If you want to disable post comments, then change `var enableDisqus = true;` to `var enableDisqus = false;`
-    <div class="row">
-        <div class="col-sm-2"></div>
-        <div class="col-sm-8">
-            <div class="img-thumbnail">
-                <img class="img-fluid" src="./posts/2022-03-10-make-stevia-page-yours/03.png" alt="img">
-            </div>
-        </div>
-        <div class="col-sm-2"></div>
-    </div>
+
+![img](./posts/2022-03-10-make-stevia-page-yours/03.png)

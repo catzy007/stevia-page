@@ -13,7 +13,6 @@ function loadContentRecommended(arrIndex, arrLower){
         }else{
             contLoadMax = arrIndex.length;
         }
-        document.getElementById("recommendedContent").style.display = 'block';
     }
 
     for(var i=0; i<contLoadMax; i++){
@@ -25,7 +24,7 @@ function loadContentRecommended(arrIndex, arrLower){
     }
     // console.log(arrIndex); console.log(arrIndexC);
     
-    for(var i=1; i<contLoadMax+1; i++){
+    for(var i=1; i<=3; i++){
         contPostCardId.push("recommendedContentCard" + i.toString());
         contPostImgId.push("recommendedContentImg" + i.toString());
         contPostDateId.push("recommendedContentDate" + i.toString());
@@ -37,6 +36,9 @@ function loadContentRecommended(arrIndex, arrLower){
         setElmtThumbnail(contPostImgId[i], "./posts/" + recommendedContentL[i] + "/thumbnail.jpg");
         document.getElementById(contPostDateId[i]).innerHTML = getTitleDate(recommendedContentI[i]);
         document.getElementById(contPostTitleId[i]).innerHTML = getTitleOnly(recommendedContentI[i]);
-        document.getElementById(contPostCardId[i]).style.display = 'block';
+    }
+
+    for(var i=contLoadMax; i<3; i++){
+        document.getElementById(contPostCardId[i]).style.display = 'none';
     }
 }

@@ -14,8 +14,7 @@ At the heart it uses [ShowdownJS](https://github.com/showdownjs/showdown),
 ├── css
 ├── fonts
 ├── js
-├── less
-├── scss
+├── sm
 ├── pages
 │   ├── your-custom-page
 │   │   └── content.md (put your page content here)
@@ -40,18 +39,19 @@ At the heart it uses [ShowdownJS](https://github.com/showdownjs/showdown),
 YYYY-MM-DD-post-title-you-want-to-create
 ```
 3. Go to directory you just made and create `content.md`.
-4. Fill `content.md` with your content using markdown &/ html format.
+4. Fill `content.md` with your content using Markdown format.
 5. Create `thumbnail.jpg` file with `4:3` aspect ratio.
 6. Then open `/posts/index.md` and add directory name `YYYY-MM-DD-post-title-you-want-to-create` to posts index.
 7. Git add, commit, and push.
-8. If you set CI/CD, your blog will automatically update.
+8. If CI/CD is set, the blog will automatically get updated.
 
 > Make sure only using `1234567890abcdefghijklmnopqrstuvwxyz` and `-` as index separator
 
 ### Pros
-* You can write in any platform as long as you have git and text editor.
+* Write in any platform as long as git and text editor is available.
 * No need to install additional tools like [Hugo](https://gohugo.io/) & [Jekyll](https://jekyllrb.com/).
 * No need to regenerate static page after content update.
+* Markdown Directives and standard HTML tag is supported for more customization.
 
 ### Cons
-* Spacing and layout still not perfect sometimes but can be avoided using HTML.
+* There are an edge case where spacing and layout may require additional step such as using Markdown Directives and standard HTML.

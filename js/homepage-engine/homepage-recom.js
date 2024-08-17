@@ -13,7 +13,6 @@ function loadHomepageRecommended(arrIndex, arrLower){
         }else{
             recLoadMax = arrIndex.length;
         }
-        document.getElementById("recommendedPostH4").style.display = 'block';
     }
 
     for(var i=0; i<recLoadMax; i++){
@@ -23,9 +22,8 @@ function loadHomepageRecommended(arrIndex, arrLower){
         arrIndexC.splice(dice, 1);
         arrLowerC.splice(dice, 1);
     }
-    // console.log(arrIndex); console.log(arrIndexC);
     
-    for(var i=1; i<recLoadMax+1; i++){
+    for(var i=1; i<=6; i++){
         recPostCardId.push("recommendedPostCard" + i.toString());
         recPostImgId.push("recommendedPostImg" + i.toString());
         recPostDateId.push("recommendedPostDate" + i.toString());
@@ -37,6 +35,9 @@ function loadHomepageRecommended(arrIndex, arrLower){
         setElmtThumbnail(recPostImgId[i], "./posts/" + recommendedPostL[i] + "/thumbnail.jpg");
         document.getElementById(recPostDateId[i]).innerHTML = getTitleDate(recommendedPostI[i]);
         document.getElementById(recPostTitleId[i]).innerHTML = getTitleOnly(recommendedPostI[i]);
-        document.getElementById(recPostCardId[i]).style.display = 'block';
+    }
+
+    for(var i=recLoadMax; i<6; i++){
+        document.getElementById(recPostCardId[i]).style.display = 'none';
     }
 }

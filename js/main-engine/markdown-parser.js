@@ -8,11 +8,14 @@
 		// console.time("Parser");
 
 		var markdown = (this.responseText);
-		var converter = new showdown.Converter();
-		converter.setOption('tables', true);
-		converter.setOption('strikethrough', true);
-		var html = converter.makeHtml(markdown);
-		html = html.replace(/<pre><code>/g, '<pre class="language-bash"><code>');
+		marked.use(createDirectives(), 
+			{async: false, pedantic: false,
+			breaks: false, gfm: true,
+			renderer});
+		var html = marked.parse(markdown);
+
+		html = DOMPurify.sanitize(html, 
+			{ ADD_TAGS: ["iframe"], ADD_ATTR: ['allow', 'allowfullscreen', 'frameborder', 'scrolling'] });
 		document.getElementById('main-content').innerHTML = html;
 
 		// console.log(getSiteIdentifier()[2]);
@@ -26,6 +29,8 @@
 		}
 
 	//code highlighter
+		hljs.registerAliases("undefined", "bash");
+		hljs.configure({languages: ["bash"]});
 		hljs.highlightAll();
 		// console.timeEnd("Parser");
 	}
