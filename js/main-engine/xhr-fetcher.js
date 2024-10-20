@@ -4,8 +4,19 @@ function executeXhr(url, callback) {
 	xhr.arguments = Array.prototype.slice.call(arguments, 2);
 	xhr.onload = xhrSuccess;
     xhr.onerror = xhrError;
+    xhr.onabort = xhrError;
     xhr.open("GET", url, true);
+    xhr.setRequestHeader("Accept", "text/markdown");
 	xhr.send(null);
+    xhr.onreadystatechange = () => {
+        if (xhr.readyState === xhr.HEADERS_RECEIVED) {
+            const contentType = xhr.getResponseHeader("Content-Type");
+            if (contentType !== null && !contentType.includes("text/markdown")) {
+                xhr.status = 404;
+                xhr.abort();
+            }
+        }
+    };
 }
 
 function xhrSuccess() { 
@@ -13,25 +24,27 @@ function xhrSuccess() {
 		xhrError(this.arguments[0], this.statusText);
 		return;
 	}
-	//console.log(this.arguments);
 	console.log("#![" + this.arguments[0] + "] XMLHttpRequest Success!");
 	this.callback.apply(this, this.arguments); 
 }
 
 function xhrError(type, status) { 
-	// console.log(type + " " + this.arguments);
-	console.log("#![" + (this.arguments || type) + "] XMLHttpRequest Error! " + (this.statusText || status));
-	showError((this.arguments || type), (this.statusText || status));
-}
-
-function showError(type, status){
-	var pagelog = "<br><br><br><br><br><br><br>\
-		<div align=\"center\">\
-			<h3 class=\"not-found-nmbr\">404 "+ (this.arguments || type) +" Not Found!</h3>\n\
-			<p>Sorry the "+ (this.arguments || type) +" you're looking could not be found.</p>\
-			<p>["+ (this.arguments || type) +"] XMLHttpRequest Error! \
-			Click <a href='./'>here</a> to come back</p>\
-		</div>\
-		<br><br><br><br><br><br><br><br><br>";
-	document.getElementById('main-content').innerHTML = pagelog;
+    console.log("#![" + (this.arguments || type) + "] XMLHttpRequest Error! " + (this.statusText || status || 'Not Found'));
+ 
+    var errorPage = "";
+    errorPage = errorPage.concat("<table align='center' class='stevia-error-page'>");
+    errorPage = errorPage.concat("<tbody>")
+    errorPage = errorPage.concat("<tr>")
+    errorPage = errorPage.concat("<td class='align-middle'>")
+    errorPage = errorPage.concat("<h1 style='font-size:7.0rem;'>404</h1>");
+    errorPage = errorPage.concat("<h1>Something's wrong here...</h1>");
+    errorPage = errorPage.concat("<h3 class='text-body-secondary lead'>Sorry the ")
+    errorPage = errorPage.concat((this.arguments || type))
+    errorPage = errorPage.concat(" you're looking could not be found.<br>");
+    errorPage = errorPage.concat("Check out our content below or head back to")
+    errorPage = errorPage.concat("<a class='lead' href='./'> Homepage</a>.</h3>");
+    errorPage = errorPage.concat("</td>");
+    errorPage = errorPage.concat("</tr>")
+    errorPage = errorPage.concat("</tbody>")
+    showMarkdown((this.arguments || type), errorPage);
 }

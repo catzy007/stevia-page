@@ -4,10 +4,10 @@
 	}
 
 //markdown parser
-	function showMarkdown(type){
+    function showMarkdown(type, errorPage){
 		// console.time("Parser");
 
-		var markdown = (this.responseText);
+        var markdown = (this.responseText || errorPage || "null");
 		marked.use(createDirectives(), 
 			{async: false, pedantic: false,
 			breaks: false, gfm: true,

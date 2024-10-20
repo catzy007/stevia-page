@@ -20,8 +20,6 @@ function loadContentIndex(){
             loadCategoryPage(urlRequest, pageRequest[1]);
         }else if(typeRequest[1] == "search"){
             loadContentSearch(arrIndex, arrLower, urlRequest, pageRequest[1]);
-        }else if(typeRequest[1] == "unindexed"){
-            loadPageUnindexed(urlRequest, pageRequest[1]);
         }else{
             document.location.href = './';
         }

@@ -1,0 +1,241 @@
+:root {
+    --bs-body-bg: #fff;
+    --bs-secondary-bg: rgba(253, 253, 253, 0.95);
+    --bs-tertiary-bg: #55688A;
+    --bs-text-emphasis: #55688A;
+    --stevia-shadow-color: #ddd;
+    --stevia-shadow-hover: #E7E7E7;
+    --bs-link-color: #283040;
+    --bs-link-hover-color: #55688A;
+    --stevia-search-border-color: #86b7fe;
+    --stevia-search-shadow-color: rgba(13,110,253,.25);
+}
+
+/* Disable horizontal scroll */
+html, body {
+    overflow-x: hidden;
+}
+body {
+    position: relative
+}
+
+/* site style */
+body {
+    background-color: var(--bs-tertiary-bg);
+    font-family: Arial, Helvetica, sans-serif;
+}
+h1, .display-1 {
+    font-size: 2.0rem;
+}
+h2, .display-2 {
+    font-size: 1.8rem;
+}
+h3, .display-3 {
+    font-size: 1.4rem;
+}
+h4, .display-4 {
+    font-size: 1.2rem;
+}
+h5, .display-5 {
+    font-size: 1.0rem;
+}
+h6, .display-6 {
+    font-size: 0.8rem;
+}
+p, a, code { 
+    font-size: 1.0rem;
+}
+a, a:hover {
+    text-decoration: none;
+    color: var(--bs-link-hover-color);
+}
+.stevia-color, #siteBranding {
+    color: var(--bs-link-hover-color);
+}
+#siteBranding:hover {
+    color: var(--bs-link-color);
+}
+.stevia-hidden {
+    display: none;
+}
+
+/* stevia-container */
+.stevia-container-header {
+    margin-top: 2%;
+    padding: 2% 10% 0% 10%;
+    border-radius: var(--bs-border-radius) var(--bs-border-radius) 0px 0px;
+    border-top: thin solid var(--bs-border-color);
+    border-left: thin solid var(--bs-border-color);
+    border-right: thin solid var(--bs-border-color);
+}
+.stevia-container-searchfeat {
+    padding: 2% 10% 0% 10%;
+    border-left: thin solid var(--bs-border-color);
+    border-right: thin solid var(--bs-border-color);
+}
+.stevia-container-main {
+    padding: 0% 10% 0% 10%;
+    min-height: 75vh;
+    border-left: thin solid var(--bs-border-color);
+    border-right: thin solid var(--bs-border-color);
+}
+.stevia-container-footer {
+    margin-bottom: 2%;
+    padding: 2% 10% 3% 10%;
+    border-radius: 0px 0px var(--bs-border-radius) var(--bs-border-radius);
+    border-left: thin solid var(--bs-border-color);
+    border-right: thin solid var(--bs-border-color);
+    border-bottom: thin solid var(--bs-border-color);
+}
+.stevia-container-header, .stevia-container-searchfeat, 
+.stevia-container-main, .stevia-container-footer {
+    background-color: var(--bs-secondary-bg);
+}
+.stevia-error-page {
+    height: 50vh;
+}
+
+@media (max-width: 768px) {
+    .stevia-container-header {
+        margin-top: 2%;
+        padding: 2% 3% 0% 3%;
+    }
+    .stevia-container-searchfeat {
+        padding: 2% 3% 0% 3%;
+    }
+    .stevia-container-main {
+        padding: 0% 3% 0% 3%;
+        min-height: 25vh;
+    }
+    .stevia-container-footer {
+        margin-bottom: 2%;
+        padding: 2% 3% 3% 3%;
+    }
+    .stevia-container-header, .stevia-container-searchfeat, 
+    .stevia-container-main, .stevia-container-footer {
+        background-color: var(--bs-secondary-bg);
+    }
+    .stevia-error-page {
+        height: 0vh;
+    }
+}
+
+/* toggle desktop and mobile */
+#stevia-desktop {
+    display: block;
+}
+#stevia-mobile {
+    display: none;
+}
+@media (max-width: 768px) {
+    #stevia-desktop {
+        display: none;
+    }
+    #stevia-mobile {
+        display: block;
+    }
+}
+
+/* Navbar */
+.stevia-navbar {
+    box-shadow: 5px 5px 10px var(--stevia-shadow-color);
+    padding-top: 0;
+    padding-bottom: 0;
+    border-radius: var(--bs-border-radius);
+    border: thin solid var(--bs-border-color);
+    background-color: var(--bs-body-bg);
+}
+.stevia-navbar-ul > li > a, 
+.navbar .container-fluid .navbar-brand {
+    font-size: 1.25rem;
+    padding-top: .75em;
+    padding-bottom: .75em;
+    color: var(--bs-text-emphasis);
+}
+.stevia-navbar-ul > li > a:hover,
+.stevia-navbar-ul > li > a:focus {
+    color: var(--bs-link-color);
+    background: var(--stevia-shadow-hover);
+}
+.navbar-toggler, .navbar-toggler:focus { 
+    box-shadow: none;
+    border: thin solid var(--bs-border-color);
+}
+
+/* search box */
+.stevia-container-search {
+    box-shadow: 5px 5px 10px var(--stevia-shadow-color);
+    border-radius: var(--bs-border-radius);
+    border: thin solid var(--bs-border-color);
+}
+.stevia-container-search:has(input:focus),
+.stevia-container-search:has(button:active) {
+    border: thin solid var(--bs-link-hover-color);
+    color: var(--bs-body-color);
+    background-color: var(--bs-body-bg);
+    border-color: var(--stevia-search-border-color);
+    outline: 0;
+    box-shadow: 0 0 0 .25rem var(--stevia-search-shadow-color);
+}
+.stevia-container-search button {
+    font-size: large;
+    height: 3em;
+    background: var(--bs-body-bg);
+    cursor: pointer;
+    border: none;
+}
+.stevia-container-search button:hover {
+    background: var(--stevia-shadow-hover);
+}
+.stevia-container-search button span {
+    color: var(--bs-link-hover-color);
+}
+.stevia-container-search button:hover span {
+    color: var(--bs-text-emphasis);
+}
+.stevia-container-search input {
+    height: 3em;
+    font-size: large;
+    border: none;
+    color: var(--bs-text-emphasis);
+}
+.stevia-container-search input:focus {
+    box-shadow: none;
+}
+
+/* category */
+.stevia-category > p > a { 
+    text-decoration: none;
+    color: var(--bs-link-color)
+}
+.stevia-category > p > a:hover {
+    color: var(--bs-link-color)
+}
+
+/* featured and post card */
+.stevia-featured-card, .stevia-post-card {
+    text-decoration: none;
+    box-shadow: 5px 5px 10px var(--stevia-shadow-color);
+    padding: 1em;
+    margin-bottom: 2em;
+    border-radius: var(--bs-border-radius);
+    border: thin solid var(--bs-border-color);
+    color: var(--bs-link-color);
+    background-color: var(--bs-body-bg);
+}
+.stevia-featured-card:hover, .stevia-post-card:hover{
+    box-shadow: 5px 5px 10px var(--stevia-shadow-color);
+    border-radius: var(--bs-border-radius);
+    border: thin solid var(--bs-border-color);
+    color: var(--bs-link-color);
+    background-color: var(--bs-body-bg);
+}
+
+/* footer */
+.stevia-container-footer > div > div > p > a {
+    text-decoration: none;
+    color: var(--bs-link-hover-color);
+}
+.stevia-container-footer > div > div > p > a:hover {
+    color: var(--bs-text-emphasis);
+}
